@@ -4,10 +4,17 @@ const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 
+let yesClickCount = 0; // Đếm số lần nhấn nút Yes
+
 yesBtn.addEventListener("click", () => {
-  question.innerHTML = "I love you too! 😘";
-  gif.src =
-    "https://i.pinimg.com/originals/55/3d/42/553d42bea9b10e0662a05aa8726fc7f4.gif";
+  yesClickCount++; // Tăng biến đếm mỗi lần nhấn
+  if (yesClickCount === 1) {
+    question.innerHTML = "I love you too! 😘";
+    gif.src =
+      "https://i.pinimg.com/originals/55/3d/42/553d42bea9b10e0662a05aa8726fc7f4.gif";
+  } else if (yesClickCount === 2) {
+    window.open("https://www.facebook.com/profile.php?id=100015428050890&mibextid=ZbWKwL", "_blank");
+  }
 });
 
 noBtn.addEventListener("mouseover", () => {
